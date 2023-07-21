@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/csshake.min.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+
+    <link
+      rel="preload"
+      href="./dist/theme/fonts/work/subset-YanoneKaffeesatz-ExtraLight.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>Редактор презентаций в вебе</section>
+        <section>
+          <table>
+            <tr>
+              <th>Вариант</th>
+            </tr>
+            <tr class="fragment">
+              <td>Electron</td>
+            </tr>
+            <tr class="fragment">
+              <td>PWA</td>
+            </tr>
+            <tr class="fragment">
+              <td>Tauri или аналоги</td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <h2>Electron</h2>
+        </section>
+        <section>
+          <h3>Режимы ядра</h3>
+          <ul>
+            <li>Бинарное ядро, собранное под конкретную систему</li>
+            <li>AMR и ядро в WASM</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Wasm ядро</h2>
+          <table>
+            <tr>
+              <th data-fragment-index="1" class="fragment">Сильные стороны</th>
+              <th data-fragment-index="2" class="fragment">Возожности</th>
+            </tr>
+            <tr>
+              <td class="fragment" data-fragment-index="1">
+                <ul style="font-size: 0.5em">
+                  <li>Уже работает и протестирован в веб</li>
+                  <li>Быстрая разработка</li>
+                  <li>Больше разработчиков</li>
+                  <li>Веб стандарты</li>
+                  <li>Уже прошли сертификацию в Сквадус</li>
+                </ul>
+              </td>
+              <td data-fragment-index="2" class="fragment">
+                <ul style="font-size: 0.5em">
+                  <li>Сократить время на разработку</li>
+                  <li>Фокус</li>
+                  <li>Тестировать за счет веба</li>
+                  <li>A11y</li>
+                  <li>Применение новых фич из браузера</li>
+                  <li>Автотесты</li>
+                  <li>Повод оптимизировать перформанс для веб</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th class="fragment" data-fragment-index="3">Слабые стороны</th>
+              <th class="fragment" data-fragment-index="4">Угрозы</th>
+            </tr>
+            <tr>
+              <td class="fragment" data-fragment-index="3">
+                <ul style="font-size: 0.5em">
+                  <li>Медленнее (нативное ядро?)</li>
+                  <li>Тратит больше ресурсов</li>
+                  <li>Много весит</li>
+                </ul>
+              </td>
+              <td data-fragment-index="4" class="fragment">
+                <ul style="font-size: 0.5em">
+                  <li>только Веб UI</li>
+                  <li>сроки</li>
+                  <li>не устроит перформанс</li>
+                  <li>нельзя установить на слабый ПК</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          Исследование про Performance
+          <p>
+            <a
+              href="https://www.diva-portal.org/smash/get/diva2:1663645/FULLTEXT01.pdf"
+              >diva-portal.org/smash/get/diva2:1663645/FULLTEXT01.pdf</a
+            >
+          </p>
+        </section>
+        <section>PWA</section>
+        <section>
+          <h2>PWA</h2>
+          <table>
+            <tr>
+              <th data-fragment-index="1" class="fragment">Сильные стороны</th>
+              <th data-fragment-index="2" class="fragment">Возожности</th>
+            </tr>
+            <tr>
+              <td class="fragment" data-fragment-index="1">
+                <ul style="font-size: 0.5em">
+                  <li>... все тоже самое что и electon</li>
+                  <li>Это стандарт</li>
+                  <li>Нет рантайма</li>
+                  <li>Уже почти готово</li>
+                  <li>Обновления</li>
+                  <li>Не взломать</li>
+                </ul>
+              </td>
+              <td data-fragment-index="2" class="fragment">
+                <ul style="font-size: 0.5em">
+                  <li>Все от электрона</li>
+                  <li>Можно делать дополнительно</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th class="fragment" data-fragment-index="3">Слабые стороны</th>
+              <th class="fragment" data-fragment-index="4">Угрозы</th>
+            </tr>
+            <tr>
+              <td class="fragment" data-fragment-index="3">
+                <ul style="font-size: 0.5em">
+                  <li>Медленнее</li>
+                  <li>Много весит</li>
+                </ul>
+              </td>
+              <td data-fragment-index="4" class="fragment">
+                <ul style="font-size: 0.5em">
+                  <li>только Веб UI</li>
+                  <li>не устроит перформанс</li>
+                  <li>нельзя установить на слабый ПК</li>
+                  <li>несовместимость с linux (нужно проверить)</li>
+                  <li>потенциальная проблема с окнами</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          Tauri.app
+          <p class="fragment">Лучшая версия electron, но не исследованная</p>
+        </section>
+        <section>
+          <ul>
+            <li class="fragment">Electron - основной вариант</li>
+            <li class="fragment">PWA - делаем отдельно</li>
+            <li class="fragment">Проверить Tauri как замена Electron</li>
+          </ul>
+        </section>
+        <section>
+          <p>Открытые вопросы</p>
+          <ul>
+            <li class="fragment">Как работаем с файлами в облаке</li>
+            <li class="fragment">Совместное редактирование презентаций</li>
+            <li class="fragment">Ограниченное использование шрифтов</li>
+            <li class="fragment">Разница в интерфейсе между web и desktop</li>
+            <li class="fragment">
+              Копирование и вставка данных в слайды через клипборд
+            </li>
+            <li class="fragment">
+              Возможны какие-то ограничения на интеграцию с системой? (Например
+              история буфера обмена, системный поиск, курсоры)
+            </li>
+            <li class="fragment">Донабор в команду web</li>
+          </ul>
+        </section>
+        <section>
+          <p>Доработки</p>
+          <ul>
+            <li class="fragment">
+              Перфоманс (может потребоваться доработки core), Открытие,
+              редактирование
+            </li>
+            <li class="fragment">Запись макросов</li>
+            <li class="fragment">Запароленные файлы</li>
+          </ul>
+        </section>
+        <section>
+          <h3>План</h3>
+          <p class="fragment">2.7 Альфа (Бета маловероятна)</p>
+          <p class="fragment">2.8 Бета - релиз</p>
+          <p class="fragment">* при этом Текст и Таблицы отстанут от Desktop</p>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
